@@ -1,7 +1,7 @@
 package com.example.projet_annuel
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -18,7 +18,8 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         val navigationController = findNavController(R.id.fragmentContainerView)
 
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment, R.id.addFragment, R.id.chatFragment))
+        val appBarConfiguration =
+            AppBarConfiguration(setOf(R.id.homeFragment, R.id.addFragment, R.id.chatFragment))
         setupActionBarWithNavController(navigationController, appBarConfiguration)
 
         bottomNavigationView.setupWithNavController(navigationController)

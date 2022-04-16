@@ -10,6 +10,6 @@
         android:layout_height="wrap_content"
         android:text="Chat Page"
         android:textSize="26dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center" />
 
 </FrameLayout>
