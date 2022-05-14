@@ -26,7 +26,6 @@ fun BottomBar(navController: NavHostController) {
                 currentDestination = currentDestination,
                 navController = navController
             )
-
         }
     }
 }

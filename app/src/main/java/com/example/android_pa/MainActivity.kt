@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.example.android_pa.ui.theme.Android_paTheme
 import com.example.android_pa.view.navigation.bottomBar.BottomBar
-import com.example.android_pa.view.navigation.bottomBar.BottomNavigationGraph
+import com.example.android_pa.view.navigation.bottomBar.NavigationGraph
 import com.example.android_pa.view.navigation.topBar.TopBar
 
 class MainActivity : ComponentActivity() {
@@ -27,9 +27,9 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     Scaffold(
                         bottomBar = { BottomBar(navController = navController) },
-                        topBar = { TopBar() }
+                        topBar = { TopBar(navController = navController) }
                     ) {
-                        BottomNavigationGraph(navController = navController)
+                        NavigationGraph(navController = navController)
                     }
                 }
             }

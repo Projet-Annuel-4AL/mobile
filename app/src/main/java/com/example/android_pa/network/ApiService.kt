@@ -11,10 +11,10 @@ interface ApiService {
     @GET("movielist.json")
     suspend fun getPosts(): List<Post>
 
-    companion object{
+    companion object {
         var apiService: ApiService? = null
         fun getInstance(): ApiService {
-            if(apiService == null){
+            if (apiService == null) {
                 apiService = Retrofit.Builder()
                     .baseUrl("https://howtodoandroid.com/apis/")
                     .addConverterFactory(GsonConverterFactory.create())

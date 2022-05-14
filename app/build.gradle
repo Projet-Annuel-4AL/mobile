@@ -70,4 +70,12 @@ dependencies {
 
     // coil
     implementation "io.coil-kt:coil-compose:2.0.0"
+
+    // espresso
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.4.0')
+    androidTestImplementation('androidx.test:runner:1.4.0')
+    androidTestImplementation('androidx.test:rules:1.4.0')
+
+    // Material Icons
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
 }

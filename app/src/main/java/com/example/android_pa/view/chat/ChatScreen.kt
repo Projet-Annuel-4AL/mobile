@@ -1,11 +1,15 @@
 package com.example.android_pa.view.chat
 
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.res.stringResource
-import com.example.android_pa.R
-import io.getstream.chat.android.compose.ui.channels.ChannelsScreen
+import com.example.android_pa.view.authentication.login.Login
+
+val mm = ""
 
 @Composable
-fun ChatScreen(){
+fun ChatScreen() {
+    Login(
+        loadingProgressBar = false,
+        onclickLogin = { email: String, password: String -> mm },
+        imageError = false
+    )
 }

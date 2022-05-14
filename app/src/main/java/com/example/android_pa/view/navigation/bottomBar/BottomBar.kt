@@ -6,24 +6,24 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.ui.graphics.vector.ImageVector
 
-sealed class BottomBar (
+sealed class BottomBar(
     val route: String,
     val title: String,
     val icon: ImageVector,
-){
-    object Home: BottomBar(
-        route = "accueil",
+) {
+    object Home : BottomBar(
+        route = "home",
         title = "Accueil",
         icon = Icons.Default.Home
     )
 
-    object Add: BottomBar(
+    object Add : BottomBar(
         route = "submit",
         title = "Ajouter",
         icon = Icons.Default.Add
     )
 
-    object Chat: BottomBar(
+    object Chat : BottomBar(
         route = "conversation",
         title = "Conversation",
         icon = Icons.Default.Email

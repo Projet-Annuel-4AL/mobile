@@ -6,11 +6,14 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.android_pa.profile.ProfileScreen
+import com.example.android_pa.view.chat.ChatScreen
 import com.example.android_pa.view.createPost.AddScreen
 import com.example.android_pa.view.home.HomeScreen
+import com.example.android_pa.view.navigation.topBar.TopBar
 
 @Composable
-fun BottomNavigationGraph(navController: NavController) {
+fun NavigationGraph(navController: NavController) {
     NavHost(
         navController = navController as NavHostController,
         startDestination = BottomBar.Home.route
@@ -22,7 +25,12 @@ fun BottomNavigationGraph(navController: NavController) {
             AddScreen()
         }
         composable(route = BottomBar.Chat.route) {
-            Chat()
+            ChatScreen()
+        }
+
+        // TopAppBar
+        composable(route = TopBar.Profile.route) {
+            ProfileScreen()
         }
     }
 }
