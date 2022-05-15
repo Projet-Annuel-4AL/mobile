@@ -1,4 +1,4 @@
-package com.example.android_pa.profile
+package com.example.android_pa.view.profile
 
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
