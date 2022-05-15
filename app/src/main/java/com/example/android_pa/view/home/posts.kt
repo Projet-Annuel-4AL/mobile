@@ -1,5 +1,6 @@
 package com.example.android_pa.view.home
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -10,11 +11,21 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
+import coil.compose.rememberAsyncImagePainter
+import coil.compose.rememberImagePainter
+import coil.size.Scale
+import coil.transform.CircleCropTransformation
+import com.example.android_pa.R
 import com.example.android_pa.model.Post
 
 @Composable
@@ -40,8 +51,19 @@ fun PostItem(post: Post) {
             Row(
                 Modifier
                     .padding(4.dp)
-                    .fillMaxSize()
-            ) {
+                    .fillMaxSize() ){
+                Image(
+                    painter = rememberImagePainter(data = post.imageUrl,
+                        builder = {
+                            scale(Scale.FILL)
+                            placeholder(coil.base.R.drawable.notification_action_background)
+                            transformations(CircleCropTransformation())
+                        }),
+                    contentDescription = post.desc,
+                    modifier = Modifier
+                        .fillMaxHeight()
+                        .weight(0.2f)
+                )
                 Column(
                     verticalArrangement = Arrangement.Center,
                     modifier = Modifier
