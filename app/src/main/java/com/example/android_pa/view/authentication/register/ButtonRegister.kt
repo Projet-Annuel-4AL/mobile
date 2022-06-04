@@ -1,4 +1,4 @@
-package com.example.android_pa.view.authentication.login
+package com.example.android_pa.view.authentication.register
 
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
@@ -8,11 +8,14 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.android_pa.R
+import com.example.android_pa.ui.theme.Palit
 
 @Composable
-fun ButtonLogin(
+fun ButtonRegister(
     onclick: () -> Unit,
     enabled: Boolean
 ) {
@@ -23,13 +26,14 @@ fun ButtonLogin(
         enabled = enabled,
         shape = CircleShape,
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = Color.Blue
+            colorResource(id = R.color.palit)
         )
     ) {
         Text(
-            text = "Login",
+            text = "Register",
             fontSize = 35.sp,
             color = Color.White
         )
     }
 }
+

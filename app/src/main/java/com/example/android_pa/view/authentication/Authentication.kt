@@ -1,5 +1,6 @@
-package com.example.android_pa.view.navigation.topBar
+package com.example.android_pa.view.authentication
 
-sealed class TopBar(val route: String, val label: String) {
-    object Profile : TopBar(route = "profile", label = "Profile")
+sealed class Authentication(val route: String, val label: String) {
+    object Login : Authentication(route = "login", label = "Login")
+    object Register : Authentication(route = "register", label = "Register")
 }

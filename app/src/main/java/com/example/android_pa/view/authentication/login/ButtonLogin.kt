@@ -8,8 +8,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.android_pa.R
 
 @Composable
 fun ButtonLogin(
@@ -23,7 +25,7 @@ fun ButtonLogin(
         enabled = enabled,
         shape = CircleShape,
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = Color.Blue
+            colorResource(id = R.color.palit)
         )
     ) {
         Text(

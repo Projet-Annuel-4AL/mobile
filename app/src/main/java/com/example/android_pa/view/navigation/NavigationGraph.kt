@@ -6,6 +6,9 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.android_pa.view.authentication.Authentication
+import com.example.android_pa.view.authentication.LoginScreen
+import com.example.android_pa.view.authentication.RegisterScreen
 import com.example.android_pa.view.chat.ChatScreen
 import com.example.android_pa.view.createPost.AddScreen
 import com.example.android_pa.view.home.HomeScreen
@@ -17,7 +20,7 @@ import com.example.android_pa.view.profile.ProfileScreen
 fun NavigationGraph(navController: NavController) {
     NavHost(
         navController = navController as NavHostController,
-        startDestination = BottomBar.Home.route
+        startDestination = Authentication.Login.route
     ) {
 
         //App
@@ -34,6 +37,15 @@ fun NavigationGraph(navController: NavController) {
         // TopAppBar
         composable(route = TopBar.Profile.route) {
             ProfileScreen()
+        }
+
+        // Authentication
+        composable(route = Authentication.Login.route){
+            LoginScreen(navController = navController)
+        }
+
+        composable(route = Authentication.Register.route){
+            RegisterScreen(navController = navController)
         }
     }
 }

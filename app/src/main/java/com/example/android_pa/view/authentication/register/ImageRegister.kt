@@ -1,4 +1,4 @@
-package com.example.android_pa.view.authentication.login
+package com.example.android_pa.view.authentication.register
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import com.example.android_pa.R
 
 @Composable
-fun ImageLogin(modifier: Modifier = Modifier) {
+fun ImageRegister(modifier: Modifier = Modifier) {
     Image(
         painter = painterResource(id = R.drawable.ic_login),
         contentDescription = "Image Login",

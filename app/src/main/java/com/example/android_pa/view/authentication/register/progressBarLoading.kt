@@ -1,4 +1,4 @@
-package com.example.android_pa.view.authentication.login
+package com.example.android_pa.view.authentication.register
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.CircularProgressIndicator

@@ -1,8 +1,10 @@
 package com.example.android_pa.view.navigation.bottomBar
 
+import androidx.compose.animation.*
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
@@ -10,24 +12,31 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 
 @Composable
-fun BottomBar(navController: NavHostController) {
+fun BottomBar(navController: NavHostController, bottomBarState: MutableState<Boolean>) {
     val screens = listOf(
         BottomBar.Home,
         BottomBar.Add,
         BottomBar.Chat
     )
-    val navBackStackEntry by navController.currentBackStackEntryAsState()
-    val currentDestination = navBackStackEntry?.destination
+    AnimatedVisibility(
+        visible = bottomBarState.value,
+        enter = expandHorizontally() + fadeIn(),
+        exit = shrinkHorizontally() + fadeOut(),
+        content = {
+            val navBackStackEntry by navController.currentBackStackEntryAsState()
+            val currentDestination = navBackStackEntry?.destination
 
-    BottomNavigation {
-        screens.forEach { screen ->
-            AddItem(
-                screen = screen,
-                currentDestination = currentDestination,
-                navController = navController
-            )
+            BottomNavigation {
+                screens.forEach { screen ->
+                    AddItem(
+                        screen = screen,
+                        currentDestination = currentDestination,
+                        navController = navController
+                    )
+                }
+            }
         }
-    }
+    )
 }
 
 @Composable

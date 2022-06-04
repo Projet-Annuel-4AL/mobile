@@ -7,9 +7,5 @@ val mm = ""
 
 @Composable
 fun ChatScreen() {
-    Login(
-        loadingProgressBar = false,
-        onclickLogin = { email: String, password: String -> mm },
-        imageError = false
-    )
+
 }
